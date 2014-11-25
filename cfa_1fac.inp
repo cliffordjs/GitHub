@@ -1,0 +1,25 @@
+TITLE: 
+
+MM3 CFA for PGD time 2-- 1 Factor.
+
+data:
+File is mm3_pgd.dat;
+
+variable:
+
+names = famno id i1-i24;
+idvariable = famno;
+usevariables = i13-i24;
+missing are .;
+
+Model:
+
+f1 BY i13-i24;
+
+SAVEDATA:
+FILE IS cfa2_mm3.csv;
+SAVE = FSCORES;
+Format is free;
+
+output:
+samp res;
